@@ -11,17 +11,21 @@ p "seeding 🌱"
     name: Faker::Book.genre
   )
 end
+
 p "tables populated"
-20.times do 
+
+10.times do |count|
   BooksGenre.create(
-    book_id: rand(1..10),
+    book_id: count + 1,
     genre_id: rand(1..10)
   )
 end
+
 p "book-genre relations created"
-10.times do 
+
+10.times do |count|
    BookAuthor.create(
-    book_id: rand(1..10),
+    book_id: count + 1,
     author_id: rand(1..10)
   )
 end

@@ -1,1 +1,12 @@
-<h1>Book_title</h1>
+
+<H1><%= @book.title %></H1>
+<h2>Written by:
+  <% @book.authors.each do |name| %>
+    <%= name.name %>
+  <% end %>
+</h2>
+<h2>Genre:
+  <% @book.genres.each do |name| %>
+    <%= name.name %>
+  <% end %>
+</h2>

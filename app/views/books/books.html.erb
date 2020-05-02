@@ -2,12 +2,16 @@
 <%= render 'nav' %>
 <% @books.each do |book| %>
   <div style="background-color: #d9d9f1;">
-    <p><%= book.title %></p>
+
+    <%= link_to book.title, book_path(book.id)%>
+
     <% book.authors.each do |author| %>
       <p><%= author.name %></p>
     <% end %>
+
     <% book.genres.each do |genre| %>
       <p><%= genre.name %></p>
     <% end %>
+
   </div>
 <% end %>

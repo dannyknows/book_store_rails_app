@@ -29,6 +29,12 @@ p "book-genre relations created"
     author_id: rand(1..10)
   )
 end
+6.times do |count|
+   BookAuthor.create(
+    book_id: rand(1..10),
+    author_id: rand(1..10)
+  )
+end
 
 p "book-authors relations created"
 

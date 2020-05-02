@@ -1,9 +1,13 @@
 <h1>Book_Store</h1>
-
+<%= render 'nav' %>
 <% @books.each do |book| %>
   <div style="background-color: #d9d9f1;">
     <p><%= book.title %></p>
-    <p><%= book.author %></p>
-    <p><%= book.genre %></p>
+    <% book.authors.each do |author| %>
+      <p><%= author.name %></p>
+    <% end %>
+    <% book.genres.each do |genre| %>
+      <p><%= genre.name %></p>
+    <% end %>
   </div>
 <% end %>

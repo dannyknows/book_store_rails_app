@@ -19,23 +19,25 @@ p "tables populated"
     book_id: count + 1,
     genre_id: rand(1..10)
   )
-end
-
-p "book-genre relations created"
-
-10.times do |count|
    BookAuthor.create(
     book_id: count + 1,
     author_id: rand(1..10)
   )
 end
+
+p "book-attri relations created"
+
 6.times do |count|
    BookAuthor.create(
     book_id: rand(1..10),
     author_id: rand(1..10)
   )
+  BooksGenre.create(
+    book_id: rand(1..10),
+    genre_id: rand(1..10)
+  )
 end
 
-p "book-authors relations created"
+p "additional relations created"
 
 p "completed 🌴"

@@ -1,1 +1,13 @@
 <%= render 'nav' %>
+<div>
+  <% @genres.each do |genre| %>
+    <div style="background-color: #a0c0e0;"> 
+      <h2><%= genre.name %></h2>
+      <div>
+        <% genre.books.each do |book|%>
+          <%= book.title %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

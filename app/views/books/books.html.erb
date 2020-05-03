@@ -1,17 +1,20 @@
-<h1>Book_Store</h1>
+
 <%= render 'nav' %>
-<% @books.each do |book| %>
-  <div style="background-color: #d9d9f1;">
 
-    <%= link_to book.title, book_path(book.id)%>
+<div>
+  <% @books.each do |book| %>
+    <div style="background-color: #a0c0e0;">
 
-    <% book.authors.each do |author| %>
-      <p><%= author.name %></p>
-    <% end %>
+      <%= link_to book.title, book_path(book.id)%>
 
-    <% book.genres.each do |genre| %>
-      <p><%= genre.name %></p>
-    <% end %>
+      <% book.authors.each do |author| %>
+        <p><%= author.name %></p>
+      <% end %>
 
-  </div>
-<% end %>
+      <% book.genres.each do |genre| %>
+        <p><%= genre.name %></p>
+      <% end %>
+
+    </div>
+  <% end %>
+</div>

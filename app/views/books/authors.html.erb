@@ -1,1 +1,13 @@
 <%= render 'nav' %>
+<div>
+  <% @authors.each do |author| %>
+    <div style="background-color: #a0c0e0;"> 
+      <h2><%= author.name %></h2>
+      <div>
+        <% author.books.each do |book|%>
+          <%= book.title %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -7,14 +7,14 @@
 
       <%= link_to book.title, book_path(book.id)%>
 
-      <% book.authors.each do |author| %>
-        <p><%= author.name %></p>
-      <% end %>
+      <p>Written by: 
+        <%= render 'attribute_display', book: book, attributes: book.authors%>
+      </p> 
 
-      <% book.genres.each do |genre| %>
-        <p><%= genre.name %></p>
-      <% end %>
-
+      <p>Genre:
+        <%= render 'attribute_display', book: book, attributes: book.genres%>
+      </p>
+      
     </div>
   <% end %>
 </div>

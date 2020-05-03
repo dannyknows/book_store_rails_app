@@ -1,0 +1,8 @@
+
+<% attributes.each do |attribute| %>
+  <% if attribute.name != attributes.last.name %>
+    <%= attribute.name + ", " %> 
+  <% else %>
+    <%= attribute.name %>
+  <% end %>
+<% end %>

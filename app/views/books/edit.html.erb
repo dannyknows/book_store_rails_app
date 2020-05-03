@@ -1,0 +1,18 @@
+<%= render 'nav' %>
+<h1>Edit: <%= @book.title  %></h1>
+
+<%= form_with scope: :book, method: :patch, url: book_edit_path, local: true do |form| %>
+  <%= form.label :title %>
+  <%= form.text_field :title %>
+
+  <%= form.label :authors %>
+  <% @book.authors.each do |author| %>
+    <%= form.collection_select(:author_id, Author.all, :id, :name, selected: author.name) %>
+  <% end %>
+
+  <%= form.label :genre %>
+  <% @book.genres.each_with_index do |genre, i| %>
+    <%= form.collection_select("genre_id_#{i}", Genre.all, :id, :name, selected: genre.name) %>
+  <% end %>
+  <%= form.submit %>
+<% end %>
